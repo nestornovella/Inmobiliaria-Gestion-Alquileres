@@ -3,6 +3,10 @@ const Lessor = require("./Lessor")
 
 
 module.exports = (sequelizeInstance)=>{
+    
+    const date = new Date()
+    date.setFullYear(date.getFullYear() + 2)
+
     const Rent = sequelizeInstance.define('Rent', {
         id:{
             type: DataTypes.UUID,
@@ -23,7 +27,7 @@ module.exports = (sequelizeInstance)=>{
         },
         expiration:{
             type:DataTypes.DATE,
-            defaultValue: new Date()
+            defaultValue: date
         },
        
     })

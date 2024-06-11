@@ -7,6 +7,7 @@ const { resCapture } = require('./src/helpers/resCapture')
 const { errorMidleWare } = require('./src/helpers/responseHandler')
 const cron = require('node-cron')
 const moment = require('moment-timezone')
+const { startcron } = require('./src/helpers/cronActivities')
 
 
 const app = express()
@@ -14,9 +15,7 @@ const app = express()
 console.log(new Date().getHours())
 
 //trabajar esta parte!
-cron.schedule('20 20 * * *',()=>{
-    console.log('se ejecuta cron')
-} )
+startcron()
 
 
 app.use(express.json())

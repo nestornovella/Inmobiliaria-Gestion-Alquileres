@@ -5,7 +5,7 @@ const { sendCaptured } = require("./resCapture");
 function resHandler(status, response) {
     const { req, res, next } = sendCaptured()
     if (typeof response == 'string') {
-        res.status(status).json({ status, response: response })
+        res.status(status).json({ status, message: response })
     } else {
         res.status(status).json({ status, data: response })
     }
